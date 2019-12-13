@@ -16,7 +16,7 @@
     {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% static "admin/css/responsive_rtl.css" %}">{% endif %}
 {% endblock %}
 {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE">{% endblock %}
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 {% load i18n %}
@@ -30,9 +30,9 @@
     {% if not is_popup %}
     <!-- Header -->
     <div id="header">
-        <div id="branding">
+        <!-- <div id="branding">
         {% block branding %}{% endblock %}
-        </div>
+        </div> -->
         {% block usertools %}
         {% if has_permission %}
         <div id="user-tools">
