@@ -117,3 +117,6 @@ Travis CI:
 
 Email: admintest@themail3.net
 Password: 123456
+
+## NPM
+Run this npm script 'compile:css' before running the project for the modified django admin login page inside 'static_src' folder
