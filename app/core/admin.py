@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.admin import AdminSite
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import gettext as _
 
@@ -25,6 +26,11 @@ class UserAdmin(BaseUserAdmin):
         }),
     )
 
+
+class AppAdmin(AdminSite):
+    def index(self, request, extra_context=None):
+        # Update extra_context with new variables
+        return super().index(request, extra_context)
 
 admin.site.register(models.User, UserAdmin)
 admin.site.register(models.Wall)

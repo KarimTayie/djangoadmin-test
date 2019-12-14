@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'nucleus',
+    # 'core.apps.AppAdminConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -66,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'nucleus.context_processors.nucleus'
             ],
         },
     },
@@ -136,3 +139,31 @@ EMAIL_HOST_PASSWORD = 'SG.oZsR9pdjT1qLYvd2dXS5FA.MhDWzKiyJ9YbQIc60yEj6SvmreRZJgy
 EMAIL_PORT = 587
 
 EMAIL_USE_TLS = True
+
+NUCLEUS = {
+    'sidebar': {
+        # Title
+        'title': 'Test Sidebar Title',
+
+        # Footer
+        'footer': {
+            'title': 'Test Footer Title',
+            'description': 'Longer text displayed below the title',
+        },
+
+        # Navigation
+        'navigation': {
+            # Application
+            'auth': {
+                'title': 'Accounts',  # Override title
+                'icon': 'img/custom-icon.svg'  # Optional
+            },
+
+            # Model
+            'auth.User': {
+                'title': 'Users',
+                'icon': 'img/custom-icon.svg'  # Optional
+            }        
+        }    
+    }
+}
