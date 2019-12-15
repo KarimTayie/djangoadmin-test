@@ -156,13 +156,13 @@ NUCLEUS = {
             # Application
             'auth': {
                 'title': 'Accounts',  # Override title
-                'icon': 'img/custom-icon.svg'  # Optional
+                # 'icon': 'img/custom-icon.svg'  # Optional
             },
 
             # Model
             'auth.User': {
                 'title': 'Users',
-                'icon': 'img/custom-icon.svg'  # Optional
+                # 'icon': 'img/custom-icon.svg'  # Optional
             }        
         }    
     }
