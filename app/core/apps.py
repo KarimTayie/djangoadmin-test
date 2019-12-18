@@ -3,7 +3,9 @@ from django.contrib.admin.apps import AdminConfig
 
 
 class CoreConfig(AppConfig):
-    name = 'core'
+    name = "core"
+
 
 class AppAdminConfig(AdminConfig):
-    default_site = 'core.admin.AppAdmin'
+    default_site = "core.admin.AppAdmin"
+

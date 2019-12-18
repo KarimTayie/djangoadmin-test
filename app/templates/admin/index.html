@@ -7,6 +7,12 @@
 
 
 {% block content %}
+<div style="display:flex;">
+{% include 'nucleus/components/stat_item.html'%}
+{% include 'nucleus/components/stat_item.html'%}
+{% include 'nucleus/components/stat_item.html'%}
+</div>
+
 {% include 'nucleus/components/chart.html' %}
 {{ extra_context }}
 {% if app_list %}
