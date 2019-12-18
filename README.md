@@ -111,12 +111,3 @@ Postman API collection link:
 
 Travis CI:
 [wall-api Travis CI link](https://travis-ci.org/KarimTayie/wall-app)
-
-
-## Django Admin Credentials
-
-Email: admintest@themail3.net
-Password: 123456
-
-## NPM
-Run this npm script 'compile:css' before running the project for the modified django admin login page inside 'static_src' folder
