@@ -32,8 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'nucleus',
-    # 'core.apps.AppAdminConfig',
-    'django.contrib.admin',
+    'core.apps.AppAdminConfig',
+    # 'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'core',
+    # 'core',
     'user',
 ]
 
@@ -60,7 +60,7 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'core.User'
+# AUTH_USER_MODEL = 'core.User'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
@@ -164,6 +164,11 @@ NUCLEUS = {
                 'title': 'Users',
                 # 'icon': 'img/custom-icon.svg'  # Optional
             }        
-        }    
+        }
+    },
+
+    'chart': {
+        'series': '{"labels": ["1", "2", "3"], "datasets": [{"data": [1, 2, 3]}]}', # JSON object
+        'height': 360,  # Optional 
     }
 }

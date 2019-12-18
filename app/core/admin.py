@@ -28,8 +28,21 @@ class UserAdmin(BaseUserAdmin):
 
 
 class AppAdmin(AdminSite):
-    def index(self, request, extra_context=None):
+    stat = {
+        'value': '5269',
+        'title': 'Units Sold',
+        'subtitle': 'Avg. 351 per week', 
+        'label': '-12%',
+    }
+
+    chart = {
+        'series': '{"labels": ["1", "2", "3"], "datasets": [{"data": [1, 2, 3]}]}', # JSON object
+        'height': 360,  # Optional 
+    }
+
+    def index(self, request, extra_context=chart):
         # Update extra_context with new variables
+        print('I Was here')
         return super().index(request, extra_context)
 
 admin.site.register(models.User, UserAdmin)
