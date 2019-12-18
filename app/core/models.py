@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, \
                                         PermissionsMixin
 from django.conf import settings
+from django.template.loader import render_to_string
 
 
 class UserManager(BaseUserManager):
@@ -33,6 +34,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
+    def get_initials(self):
+        return 'NA'
+
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
@@ -46,6 +50,13 @@ class Wall(models.Model):
     )
     title = models.CharField(max_length=100)
     body = models.TextField()
+
+    def render(self):
+
+        return render_to_string('nucleus/components/chart.html', {
+            'series': '{"labels": ["1", "2", "3"], "datasets": [{"data": [1, 2, 3]}]}', # JSON object
+            'height': 360,  # Optional 
+        })
 
     def __str__(self):
         """A string representation of the Wall."""
